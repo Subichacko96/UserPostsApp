@@ -1,20 +1,9 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "John Doe"
-    },
-    {
-      "id": "2",
-      "name": "Jane Smith"
-    },
-    {
-      "id": "cb5a",
-      "name": "Melissa"
-    },
-    {
-      "id": "cb58",
-      "name": "subi"
+      "name": "subimol chackos",
+      "gender": "female",
+      "id": "25cf"
     }
   ],
   "posts": [

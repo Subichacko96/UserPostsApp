@@ -7,8 +7,8 @@ function PostsPage() {
 
   useEffect(() => {
     axios
-      //.get("http://localhost:3001/posts")
-      .get(`${apiUrl}/posts`)
+      .get("http://localhost:3001/posts")
+      //.get(`${apiUrl}/posts`)
       .then((res) => setPosts(res.data))
       .catch((err) => console.error("Error fetching posts:", err));
   }, []);
