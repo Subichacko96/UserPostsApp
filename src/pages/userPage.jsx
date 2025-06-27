@@ -68,11 +68,7 @@ function UsersPage() {
             .catch(error => {
                 console.error("Error updating user:", error);
             });
-
-
     }
-
-
     const fetchUserById = (id) => {
         axios
             .get(`http://localhost:3001/users/${id}`)
@@ -86,6 +82,7 @@ function UsersPage() {
 
     return (
         <div>
+
             {!isUpdateUser && <>
                 <h3>Add User Details</h3>
                 <input type="text" value={userDetails} placeholder="Enter User name" onChange={(event) => setUserDetails(event.target.value)} />

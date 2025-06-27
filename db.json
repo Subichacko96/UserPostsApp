@@ -1,9 +1,16 @@
 {
   "users": [
     {
-      "name": "subimol chackos",
+      "name": "subimol chacko",
       "gender": "female",
-      "id": "25cf"
+      "id": "25cf",
+      "password": "Admin@1234",
+      "username": "Admin"
+    },
+    {
+      "id": "20e5",
+      "name": "melissa",
+      "gender": "female"
     }
   ],
   "posts": [
