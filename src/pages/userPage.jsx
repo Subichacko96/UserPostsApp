@@ -14,8 +14,8 @@ function UsersPage() {
     const fetAllUsers = () => {
         //get user
         axios
-            .get("http://localhost:3001/users")
-            //.get(`${apiUrl}/users`)
+            //.get("http://localhost:3001/users")
+            .get(`${apiUrl}/users`)
             .then((res) => setUsers(res.data))
             .catch((err) => console.error("Error fetching users:", err));
     }
@@ -27,15 +27,16 @@ function UsersPage() {
     }, []);
     const AddNewUser = () => {
         axios
-            .post("http://localhost:3001/users", { name: userDetails, gender: userGender })
-            //.post(`${apiUrl}/users`, { name: userDetails, gender: userGender })
+           // .post("http://localhost:3001/users", { name: userDetails, gender: userGender })
+            .post(`${apiUrl}/users`, { name: userDetails, gender: userGender })
             .then(() => {
                 setUserDetails("")
                 fetAllUsers();
             })
     }
     const deleteUser = (id) => {
-        axios.delete(`http://localhost:3001/users/${id}`)
+       // axios.delete(`http://localhost:3001/users/${id}`)
+       axios.delete(`${apiUrl}/users/${id}`)
             .then((res) => {
                 console.log("User deleted successfully", res.data);
                 fetAllUsers();
@@ -57,7 +58,8 @@ function UsersPage() {
             gender: userGender,
         };
 
-        axios.put(`http://localhost:3001/users/${userid}`, updatedUser)
+       // axios.put(`http://localhost:3001/users/${userid}`, updatedUser)
+        axios.put(`${apiUrl}/users/${userid}`, updatedUser)
             .then(response => {
                 console.log("User updated successfully:", response.data);
                 setIsUpdateUser(false);
@@ -71,7 +73,8 @@ function UsersPage() {
     }
     const fetchUserById = (id) => {
         axios
-            .get(`http://localhost:3001/users/${id}`)
+           // .get(`http://localhost:3001/users/${id}`)
+            .get(`${apiUrl}/users/${id}`)
             .then((res) => {
                 setSingleUserData(res.data);
                 setUserDetails(res.data.name);      // set input value state here

@@ -1,6 +1,8 @@
 // LoginPage.jsx
 import React, { useState } from "react";
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState("");
@@ -9,7 +11,9 @@ const LoginPage = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.get(`http://localhost:3001/users?username=${username}&password=${password}`);
+      const res = await axios
+      //.get(`http://localhost:3001/users?username=${username}&password=${password}`);
+      .get(`${apiUrl}/users?username=${username}&password=${password}`);
       if (res.data.length > 0) {
         onLogin(res.data[0]);  // user found
         localStorage.setItem("user", JSON.stringify(username));
